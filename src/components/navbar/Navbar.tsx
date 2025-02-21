@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
   IconLogout,
   IconNotebook,
@@ -8,13 +8,28 @@ import {
 import classes from './Navbar.module.css';
 
 const data = [
-  { link: '', label: 'ChatBot', icon: IconRobotFace },
-  { link: '', label: 'Mi diario emocional', icon: IconNotebook },
-  { link: '', label: 'Mi perfil emocional', icon: IconTarget },
+  { link: '/', label: 'ChatBot', icon: IconRobotFace },
+  { link: '/diary', label: 'Mi diario emocional', icon: IconNotebook },
+  { link: '/profile', label: 'Mi perfil emocional', icon: IconTarget },
 ];
 
 export function Navbar() {
-  const [active, setActive] = useState('Billing');
+  const [active, setActive] = useState('ChatBot');
+
+  const location = window.location;
+
+  useEffect(() => {
+  switch (location.pathname) {
+    case '/': 
+        setActive('ChatBot');
+        break;
+    case '/diary':
+        setActive('Mi diario emocional');
+        break;
+    case '/profile':
+        setActive('Mi perfil emocional');
+        break;
+    };}, [location]);
 
   const links = data.map((item) => (
     <a
@@ -22,10 +37,6 @@ export function Navbar() {
       data-active={item.label === active || undefined}
       href={item.link}
       key={item.label}
-      onClick={(event) => {
-        event.preventDefault();
-        setActive(item.label);
-      }}
     >
       <item.icon className={classes.linkIcon} stroke={1.5} />
       <span>{item.label}</span>
