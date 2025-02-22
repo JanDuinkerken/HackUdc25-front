@@ -70,7 +70,7 @@ export function Login({changeAuth}: LoginProps) {
                                     required
                                     mt="md"
                                 />
-                                <Button fullWidth mt="xl" type='submit'>
+                                <Button fullWidth mt="xl" type='submit' bg="#5DFDCB" c="dark">
                                     Iniciar sesión
                                 </Button>
                             </form>
