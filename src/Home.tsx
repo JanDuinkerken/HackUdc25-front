@@ -12,7 +12,6 @@ export const Home = () => {
                 width: "15vw",
                 breakpoint: 'sm',
             }}
-            padding="md"
         >
             <AppShell.Header>
                 <Header />

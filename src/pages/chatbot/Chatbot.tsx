@@ -1,10 +1,18 @@
-import { Center, Container, Group, Paper, ScrollArea, Stack, Text, TextInput, Title } from "@mantine/core";
+import { Center, Container, Group, ScrollArea, Stack, Text, TextInput, Title } from "@mantine/core";
 import { useForm } from "@mantine/form";
 import { IconRobotFace, IconSend2 } from "@tabler/icons-react";
 import { useState } from "react";
+import { Message } from "../../components/message/Message";
+import { Response } from "../../components/response/Response";
+
+type ChatbotMessageResponse = {
+    message: string,
+    response: string;
+}
 
 export const Chatbot = () => {
-    const [messages, setMessages] = useState<string[]>([]);
+    const [messages, setMessages] = useState<ChatbotMessageResponse[]>([]);
+
     const form = useForm({
         initialValues: {
             message: ""
@@ -12,7 +20,10 @@ export const Chatbot = () => {
     });
 
     const sendMessage = (message: string) => {
-        setMessages([...messages, message]);
+        setMessages([...messages, {
+            message: message,
+            response: ""
+        }]);
         form.reset();
         console.log(messages);
     }
@@ -33,11 +44,12 @@ export const Chatbot = () => {
                         </Text>
                     </Center>
                     {messages.map((message, index) => (
-                        <Paper key={index} p={"sm"} m={"sm"} radius={"xl"} w={"40vw"} bg={"gray.1"}>
-                            <Text>
-                                {message}
-                            </Text>
-                        </Paper>
+                        <Stack key={index} gap={"1vh"}>
+                            <Message message={message.message} />
+                            <Group align="left" justify="flex-end">
+                                <Response response={message.response} />
+                            </Group>
+                        </Stack>
                     ))}
                 </ScrollArea>
             </Container>
