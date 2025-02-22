@@ -1,50 +1,28 @@
-# React + TypeScript + Vite
+# KeleaCare
+This repository contains the frontend for the **KeleaCare** project, developed during the HackUdc hackathon on 2025.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project consists of an AI chatbot that, using context that can be provided every day on a personal diary, aims to help with emotional problems and provide a personal profiling of your common mental state.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Setup
+Firstly clone the project with the following command:
+```bash
+git clone https://github.com/JanDuinkerken/HackUdc25-front.git
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### Dependencies
+To run this project the following dependencies are needed:
+- NodeJS v23.8.0
+- NPM v11.1.0
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+### How to run
+To launch the frontend run the following commands from the root of the project:
+```bash
+npm install
+npm run dev
+```
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+### How to build
+If instead of running the development server you want to build the project to later host it with an independent HTTP server you can run:
+```bash
+npm run build
 ```
