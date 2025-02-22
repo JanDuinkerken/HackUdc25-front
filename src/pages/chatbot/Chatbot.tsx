@@ -4,6 +4,7 @@ import { IconRobotFace, IconSend2 } from "@tabler/icons-react";
 import { useState } from "react";
 import { Message } from "../../components/message/Message";
 import { Response } from "../../components/response/Response";
+import { sendQuestion } from "../../api/chatBotApi";
 
 type ChatbotMessageResponse = {
     message: string,
@@ -20,12 +21,13 @@ export const Chatbot = () => {
     });
 
     const sendMessage = (message: string) => {
-        setMessages([...messages, {
-            message: message,
-            response: ""
-        }]);
+        const oldMessages = [...messages];
+        setMessages([...oldMessages, { message: message, response: "" }]);
+        sendQuestion(message).then(response => {
+            console.log(response);
+            setMessages([...oldMessages, { message: message, response: response }]);
+        });
         form.reset();
-        console.log(messages);
     }
 
     return (
@@ -45,10 +47,11 @@ export const Chatbot = () => {
                     </Center>
                     {messages.map((message, index) => (
                         <Stack key={index} gap={"1vh"}>
-                            <Message message={message.message} />
                             <Group align="left" justify="flex-end">
-                                <Response response={message.response} />
+                                <Message message={message.message} />
                             </Group>
+                            <Response response={message.response} />
+
                         </Stack>
                     ))}
                 </ScrollArea>
@@ -57,13 +60,14 @@ export const Chatbot = () => {
                 <Group>
                     <form onSubmit={form.onSubmit((e) => { sendMessage(e.message) })}>
                         <TextInput
+                            disabled={messages.length != 0 && messages[messages.length - 1]?.response === ""}
                             value={form.values.message}
                             onChange={(e) => form.setFieldValue('message', e.currentTarget.value)}
                             radius={"lg"}
                             opacity={"100%"}
                             w={"60vw"}
                             rightSection={<IconSend2 />}
-                            placeholder="¿En que podemos ayudarte?"
+                            placeholder="¿En que puedo ayudarte?"
                         />
                     </form>
                 </Group>
