@@ -1,5 +1,4 @@
-import { AppShell, Burger } from '@mantine/core';
-import { useDisclosure } from '@mantine/hooks';
+import { AppShell } from '@mantine/core';
 import { Navbar } from './components/navbar/Navbar';
 import { Header } from './components/header/Header';
 import { BrowserRouter } from 'react-router';

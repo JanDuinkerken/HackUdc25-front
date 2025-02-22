@@ -1,5 +1,5 @@
 import { RadarChart } from "@mantine/charts";
-import { Center, Container, Flex, Group, List, ListItem, Stack, Text, Title } from "@mantine/core";
+import { Center, Container, Group, List, Stack, Text, Title } from "@mantine/core";
 import { useState } from "react";
 
 export const Profile = () => {
