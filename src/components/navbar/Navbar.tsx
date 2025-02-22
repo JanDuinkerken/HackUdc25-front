@@ -56,7 +56,7 @@ export function Navbar() {
           <IconHeart className={classes.linkIcon} stroke={1.5} />
           <span>User</span>
         </a>  
-        <a href="#" className={classes.link} onClick={(event) => event.preventDefault()}>
+        <a className={classes.link} onClick={() =>{localStorage.clear(); window.location.href = '/login';}}>
           <IconLogout className={classes.linkIcon} stroke={1.5} />
           <span>Logout</span>
         </a>

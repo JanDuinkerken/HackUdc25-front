@@ -13,6 +13,7 @@ type ChatbotMessageResponse = {
 
 export const Chatbot = () => {
     const [messages, setMessages] = useState<ChatbotMessageResponse[]>([]);
+    const auth = localStorage.getItem('access_token');
 
     const form = useForm({
         initialValues: {
@@ -23,9 +24,16 @@ export const Chatbot = () => {
     const sendMessage = (message: string) => {
         const oldMessages = [...messages];
         setMessages([...oldMessages, { message: message, response: "" }]);
-        sendQuestion(message).then(response => {
+        sendQuestion(message, auth).then(response => {
             console.log(response);
-            setMessages([...oldMessages, { message: message, response: response }]);
+            setMessages([...oldMessages,
+            {
+                message: message,
+                response: response === 'Error: \'final_answer\''
+                    ? 'No entiendo tu pregunta, por favor vuelve a intentarlo'
+                    : response
+            }
+            ]);
         });
         form.reset();
     }
