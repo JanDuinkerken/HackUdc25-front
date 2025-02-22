@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import {
+  IconHeart,
   IconLogout,
   IconNotebook,
   IconRobotFace,
@@ -51,6 +52,10 @@ export function Navbar() {
       </div>
 
       <div className={classes.footer}>
+        <a href='#' className={classes.link} onClick={(event) => event.preventDefault()}>
+          <IconHeart className={classes.linkIcon} stroke={1.5} />
+          <span>User</span>
+        </a>  
         <a href="#" className={classes.link} onClick={(event) => event.preventDefault()}>
           <IconLogout className={classes.linkIcon} stroke={1.5} />
           <span>Logout</span>

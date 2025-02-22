@@ -26,7 +26,7 @@ export const Profile = () => {
         }
     ])
     return (
-        <Stack w={"80vw"} h={"85vh"}>
+        <Stack w={"80vw"} h={"85vh"} pl={"2vw"}>
             <Container>
                 <Center>
                     <Title>Mi perfil emocional</Title>
