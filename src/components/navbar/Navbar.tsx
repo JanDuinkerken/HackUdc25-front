@@ -19,17 +19,18 @@ export function Navbar() {
   const location = window.location;
 
   useEffect(() => {
-  switch (location.pathname) {
-    case '/': 
+    switch (location.pathname) {
+      case '/':
         setActive('ChatBot');
         break;
-    case '/diary':
+      case '/diary':
         setActive('Mi diario emocional');
         break;
-    case '/profile':
+      case '/profile':
         setActive('Mi perfil emocional');
         break;
-    };}, [location]);
+    };
+  }, [location]);
 
   const links = data.map((item) => (
     <a

@@ -33,7 +33,7 @@ export const Chatbot = () => {
                         </Text>
                     </Center>
                     {messages.map((message, index) => (
-                        <Paper key={index}  p={"sm"} m={"sm"} radius={"xl"} w={"40vw"} bg={"gray.1"}>
+                        <Paper key={index} p={"sm"} m={"sm"} radius={"xl"} w={"40vw"} bg={"gray.1"}>
                             <Text>
                                 {message}
                             </Text>
