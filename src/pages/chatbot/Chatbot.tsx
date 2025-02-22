@@ -1,5 +1,5 @@
 import { Center, Container, Group, Input, ScrollArea, Stack, Text, Title } from "@mantine/core";
-import { IconRobotFace, IconSend, IconSend2 } from "@tabler/icons-react";
+import { IconRobotFace  , IconSend2 } from "@tabler/icons-react";
 
 export const Chatbot = () => {
     return (
