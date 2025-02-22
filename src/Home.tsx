@@ -1,8 +1,7 @@
 import { AppShell } from '@mantine/core';
 import { Navbar } from './components/navbar/Navbar';
 import { Header } from './components/header/Header';
-import { BrowserRouter } from 'react-router';
-import { AppRoutes } from './AppRoutes';
+import { Outlet } from 'react-router';
 
 export const Home = () => {
     return (
@@ -20,9 +19,7 @@ export const Home = () => {
             <AppShell.Navbar p="md"><Navbar /></AppShell.Navbar>
 
             <AppShell.Main>
-                <BrowserRouter>
-                    <AppRoutes />
-                </BrowserRouter>
+                <Outlet />
             </AppShell.Main>
         </AppShell>
     );
