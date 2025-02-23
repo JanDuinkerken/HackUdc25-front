@@ -29,9 +29,9 @@ export const Postit = ({ day, text, emotion, color }: PostitPromps) => {
             <Card.Section py={"sm"} p={"md"}>
                 <Group gap={0}>
                     <Text fw="bold">Tu emoción predominante durante este día ha sido:</Text>
-                    <Text>{emotion}</Text>
+                    <Text>{String(emotion[0]).toUpperCase() + String(emotion).slice(1)}</Text>
                 </Group>
             </Card.Section>
         </Card>
-    )
+    );
 }

@@ -1,7 +1,7 @@
 import { Center, Container, Group, ScrollArea, Stack, Text, TextInput, Title } from "@mantine/core";
 import { useForm } from "@mantine/form";
 import { IconRobotFace, IconSend2 } from "@tabler/icons-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Message } from "../../components/message/Message";
 import { Response } from "../../components/response/Response";
 import { sendQuestion } from "../../api/chatBotApi";
@@ -14,6 +14,10 @@ type ChatbotMessageResponse = {
 export const Chatbot = () => {
     const [messages, setMessages] = useState<ChatbotMessageResponse[]>([]);
     const auth = localStorage.getItem('access_token');
+
+    useEffect(() => {
+        
+    }, [])
 
     const form = useForm({
         initialValues: {
