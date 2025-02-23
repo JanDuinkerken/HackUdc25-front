@@ -4,6 +4,8 @@ Este repositorio contiene el código del proyecto **Ofeelia**, desarrollado dura
 
 El proyecto consiste de un chatbot el cual utiliza LLMs y contexto proporcionado por el usuario en la forma de un diario emocional para intentar mejorar el estado animico del usuario y proporcionarle rutinas y objetivos para conseguir esta mejora.
 
+El repositorio que contiene el código del backend puede encontrarse [aquí](https://github.com/borjasoutoprego/HackUdc25-backend)
+
 ## Tecnologías
 Este frontal fue desarrollado en **Typescript** utilizando **ReactJS** y la librería de componentes **Mantine** para ayuar en la estilización del aplicativo.
 
