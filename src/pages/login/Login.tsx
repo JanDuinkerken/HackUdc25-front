@@ -18,7 +18,7 @@ interface LoginProps {
     changeAuth: () => void;
 }
 
-export function Login({changeAuth}: LoginProps) {
+export function Login({ changeAuth }: LoginProps) {
     const form = useForm({
         initialValues: {
             email: '',
@@ -35,6 +35,7 @@ export function Login({changeAuth}: LoginProps) {
     const authenticate = (email: string, password: string) => {
         login(email, password).then((response) => {
             localStorage.setItem('access_token', response);
+            localStorage.setItem('email', email);
             changeAuth();
             form.reset();
             window.location.href = '/';

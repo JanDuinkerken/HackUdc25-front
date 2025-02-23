@@ -13,15 +13,15 @@ import { Profile } from './pages/profile/Profile';
 import ProtectedRoute from './components/protectedRoute/ProtectedRoute';
 import { useState } from 'react';
 
-  // Function to get the access token from cookies
-  const getAccessToken = () => {
-    return localStorage.getItem('access_token');
-  }
+// Function to get the access token from cookies
+const getAccessToken = () => {
+  return localStorage.getItem('access_token');
+}
 
-  // Function to check if the user is authenticated
-  const isAuthenticated = () => {
-    return !!getAccessToken();
-  }
+// Function to check if the user is authenticated
+const isAuthenticated = () => {
+  return !!getAccessToken();
+}
 
 export default function App() {
   const [authenticated, setAuthenticated] = useState(isAuthenticated());
@@ -53,7 +53,7 @@ export default function App() {
               }>
               </Route>
             </Route>
-            <Route path="login" element={<Login changeAuth={changeAuth}/>}/>
+            <Route path="login" element={<Login changeAuth={changeAuth} />} />
           </Routes>
         </BrowserRouter>
       }

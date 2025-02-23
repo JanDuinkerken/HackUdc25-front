@@ -39,7 +39,7 @@ export const Chatbot = () => {
     }
 
     return (
-        <Stack w={"80vw"} h={"85vh"}>
+        <Stack w={"80vw"} h={"85vh"} mt={"2vh"}>
             <Container h={"80vh"}>
                 <ScrollArea h={"100%"} w={"60vw"}>
                     <Center>

@@ -17,6 +17,8 @@ const data = [
 export function Navbar() {
   const [active, setActive] = useState('ChatBot');
 
+  const user = localStorage.getItem('email');
+
   const location = window.location;
 
   useEffect(() => {
@@ -54,9 +56,9 @@ export function Navbar() {
       <div className={classes.footer}>
         <a href='#' className={classes.link} onClick={(event) => event.preventDefault()}>
           <IconHeart className={classes.linkIcon} stroke={1.5} />
-          <span>User</span>
-        </a>  
-        <a className={classes.link} onClick={() =>{localStorage.clear(); window.location.href = '/login';}}>
+          <span>{user}</span>
+        </a>
+        <a className={classes.link} onClick={() => { localStorage.clear(); window.location.href = '/login'; }}>
           <IconLogout className={classes.linkIcon} stroke={1.5} />
           <span>Logout</span>
         </a>
