@@ -1,11 +1,11 @@
 ![ofelia2](https://github.com/user-attachments/assets/50cc4b53-4429-401e-a347-7d2d9a048c36)
 
-Este repositorio contiene el código del proyecto **Ofeelia**, desarrollado durante el hackathon HackUDC en 2025, el cual tuvo una duración de 36 horas.
+Este repositorio contiene el código del proyecto **Ofeelia**, desarrollado durante el hackathon **HackUDC** en 2025, el cual tuvo una duración de 36 horas.
 
 El proyecto consiste de un chatbot el cual utiliza LLMs y contexto proporcionado por el usuario en la forma de un diario emocional para intentar mejorar el estado animico del usuario y proporcionarle rutinas y objetivos para conseguir esta mejora.
 
 ## Tecnologías
-Este frontal fue desarrollado en Typescript utilizando ReactJS y la librería de componentes Mantine para ayuar en la estilización de la aplicación.
+Este frontal fue desarrollado en **Typescript** utilizando **ReactJS** y la librería de componentes **Mantine** para ayuar en la estilización del aplicativo.
 
 Consiste de las siguientes tres paginas principales (y una página de login):
 - Chatbot: El usuario podra tener conversaciones con nuestra IA, la cual intentará ayudarlo y mejorar su estado anímico, pudiendo también proporcionarle objetivos y pautas a seguir para cumplir con esa mejoría
