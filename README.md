@@ -12,6 +12,10 @@ Consiste de las siguientes tres paginas principales (y una página de login):
 - Diario emocional: En esta página el usuario escribe como se sintió durante el día y nosotros le mostraremos cual fue la emoción más percibida durante ese día.
 - Perfil emocional: Utilizando los datos proporcionados por el usuario en el Diario emocional computamos un radar-chart el cual muestra la pertenencia de dicho usuario en cada una de las categorías del Big Five. También proporcionamos una breve explicación de la significancia del nivel de pertenencia a cada categoría.
 
+
+https://github.com/user-attachments/assets/09453f5a-727e-4e05-9865-4baf8b04d798
+
+
 ## Primeros pasos
 Para clonar el repositorio se puede utilizar el siguiente comando:
 ```bash
