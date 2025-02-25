@@ -110,7 +110,7 @@ export const Diary = () => {
                 }
                 {
                     postits.length > 0
-                        && postits[postits.length - 1].date === new Date().toISOString().slice(0, 10)
+                        && postits[0].date === new Date().toISOString().slice(0, 10)
                         ? <></>
                         : <Card
                             withBorder
